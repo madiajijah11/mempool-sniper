@@ -11,6 +11,7 @@ import { TxDetailDrawer } from './components/TxDetailDrawer';
 import { WhaleAlertBanner } from './components/WhaleAlertBanner';
 import { GuideModal } from './components/GuideModal';
 import { DonationModal } from './components/DonationModal';
+import { Analytics } from '@vercel/analytics/react';
 
 export default function App() {
   const [whaleThreshold, setWhaleThreshold] = useState(10_000);
@@ -107,6 +108,8 @@ export default function App() {
         isOpen={donationOpen}
         onClose={() => setDonationOpen(false)}
       />
+
+      <Analytics />
     </div>
   );
 }
